@@ -1,6 +1,3 @@
-CREATE DATABASE week05;
-USE week05;
-
 CREATE TABLE T1(
     Move_Number INT,
     Player CHAR(10),
