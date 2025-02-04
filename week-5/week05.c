@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<stdbool.h>
 #include<string.h>
+#include<math.h>
+#include<stdlib.h>
 
 int main(){
     int mv = 1;
@@ -58,17 +60,19 @@ int main(){
             end[1] = move[strlen(move)-1];
             end[0] = move[strlen(move)-2];
         }
-        else if(!strcmp(move, "O-O")){
-            strcpy(end,"g1");
-            isCas = true;
-        }
-        else if(!strcmp(move, "O-O-O")){
-            strcpy(end,"c1");
-            isCas = true;
-        }
-        else{
+        else if(move[strlen(move)-2] > '0' && move[strlen(move)-2] < '9'){
             end[1] = move[strlen(move)-2];
             end[0] = move[strlen(move)-3];
+        }
+        else{
+            if(strlen(move) == 3){
+                strcpy(end, "g1");
+                strcpy(wrr, "f1");
+            }
+            else{
+                strcpy(end, "c1");
+                strcpy(wlr, "d1");
+            }
         }
 
         if(move[strlen(move)-1] == '+'){
@@ -132,7 +136,52 @@ int main(){
                 break;
             case 'R':
                 strcpy(piece, "Rook");
-                
+                if(move[1] == wlr[1]){
+                    strcpy(start, wlr);
+                    strcpy(wlr, end);
+                }
+                else if(move[1] == wrr[1]){
+                    strcpy(start, wrr);
+                    strcpy(wrr, end);
+                }
+                else if(move[1] == wlr[0] && move[2] >= 'a' && move[2] <= 'h'){
+                    strcpy(start, wlr);
+                    strcpy(wlr, end);
+                }
+                else if(move[1] == wrr[0] && move[2] >= 'a' && move[2] <= 'h'){
+                    strcpy(start, wrr);
+                    strcpy(wrr, end);
+                }
+                else if(wlr[0] == wrr[0] || wlr[1] == wrr[1]){
+                    if(move[1] == wlr[0]){
+                        if(abs((int)(move[2] - wlr[1])) < abs((int)(move[2] - wrr[1]))){
+                            strcpy(start, wlr);
+                            strcpy(wlr, end);
+                        }
+                        else{
+                            strcpy(start, wrr);
+                            strcpy(wrr, end);
+                        }
+                    }
+                    else{
+                        if(abs((int)(move[1] - wlr[0])) < abs((int)(move[1] - wrr[0]))){
+                            strcpy(start, wlr);
+                            strcpy(wlr, end);
+                        }
+                        else{
+                            strcpy(start, wrr);
+                            strcpy(wrr, end);
+                        }
+                    }
+                }
+                else if(move[1] == wlr[0] || move[2] == wlr[1]){
+                    strcpy(start, wlr);
+                    strcpy(wlr, end);
+                }
+                else if(move[1] == wrr[0] || move[2] == wrr[1]){
+                    strcpy(start, wrr);
+                    strcpy(wrr, end);
+                }
                 break;
             case 'B':
                 strcpy(piece, "Bishop");
@@ -159,17 +208,19 @@ int main(){
             end[1] = move[strlen(move)-1];
             end[0] = move[strlen(move)-2];
         }
-        else if(!strcmp(move, "O-O")){
-            strcpy(end,"g8");
-            isCas = true;
-        }
-        else if(!strcmp(move, "O-O-O")){
-            strcpy(end,"c8");
-            isCas = true;
-        }
-        else{
+        else if(move[strlen(move)-2] > '0' && move[strlen(move)-2] < '9'){
             end[1] = move[strlen(move)-2];
             end[0] = move[strlen(move)-3];
+        }
+        else{
+            if(strlen(move) == 5){
+                strcpy(end, "c8");
+                strcpy(blr, "d8");
+            }
+            else{
+                strcpy(end, "g8");
+                strcpy(brr, "f8");
+            }
         }
 
         if(move[strlen(move)-1] == '+'){
@@ -233,6 +284,52 @@ int main(){
                 break;
             case 'R':
                 strcpy(piece, "Rook");
+                if(move[1] == blr[1]){
+                    strcpy(start, blr);
+                    strcpy(blr, end);
+                }
+                else if(move[1] == brr[1]){
+                    strcpy(start, brr);
+                    strcpy(brr, end);
+                }
+                else if(move[1] == blr[0] && move[2] >= 'a' && move[2] <= 'h'){
+                    strcpy(start, blr);
+                    strcpy(blr, end);
+                }
+                else if(move[1] == brr[0] && move[2] >= 'a' && move[2] <= 'h'){
+                    strcpy(start, brr);
+                    strcpy(brr, end);
+                }
+                else if(blr[0] == brr[0] || blr[1] == brr[1]){
+                    if(move[1] == blr[0]){
+                        if(abs((int)(move[2] - blr[1])) < abs((int)(move[2] - brr[1]))){
+                            strcpy(start, blr);
+                            strcpy(blr, end);
+                        }
+                        else{
+                            strcpy(start, brr);
+                            strcpy(brr, end);
+                        }
+                    }
+                    else{
+                        if(abs((int)(move[1] - blr[0])) < abs((int)(move[1] - brr[0]))){
+                            strcpy(start, blr);
+                            strcpy(blr, end);
+                        }
+                        else{
+                            strcpy(start, brr);
+                            strcpy(brr, end);
+                        }
+                    }
+                }
+                else if(move[1] == blr[0] || move[2] == blr[1]){
+                    strcpy(start, blr);
+                    strcpy(blr, end);
+                }
+                else if(move[1] == brr[0] || move[2] == brr[1]){
+                    strcpy(start, brr);
+                    strcpy(brr, end);
+                }
                 break;
             case 'B':
                 strcpy(piece, "Bishop");
