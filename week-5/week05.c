@@ -68,10 +68,12 @@ int main(){
             if(strlen(move) == 3){
                 strcpy(end, "g1");
                 strcpy(wrr, "f1");
+                isCas = true;
             }
             else{
                 strcpy(end, "c1");
                 strcpy(wlr, "d1");
+                isCas = true;
             }
         }
 
@@ -88,35 +90,35 @@ int main(){
 
         if(move[0] >='a' && move[0] <= 'h'){
             strcpy(piece, "Pawn");
-            if(move[0] == wap[0]){
+            if(move[0] == wap[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wap[1]) == ((wap[1] != '2') ? 1 : 2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wap[1]) == 1)){
                 strcpy(start, wap);
                 strcpy(wap, end);
             }
-            else if(move[0] == wbp[0]){
+            else if(move[0] == wbp[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wbp[1]) == ((wbp[1] != '2') ? 1 : 2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wbp[1]) == 1)){
                 strcpy(start, wbp);
                 strcpy(wbp, end);
             }
-            else if(move[0] == wcp[0]){
+            else if(move[0] == wcp[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wcp[1]) == ((wcp[1] != '2') ? 1 : 2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wcp[1]) == 1)){
                 strcpy(start, wcp);
                 strcpy(wcp, end);
             }
-            else if(move[0] == wdp[0]){
+            else if(move[0] == wdp[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wdp[1]) == ((wdp[1] != '2') ? 1 : 2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wdp[1]) == 1)){
                 strcpy(start, wdp);
                 strcpy(wdp, end);
             }
-            else if(move[0] == wep[0]){
+            else if(move[0] == wep[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wep[1]) == ((wep[1] != '2') ? 1 : 2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wep[1]) == 1)){
                 strcpy(start, wep);
                 strcpy(wep, end);
             }
-            else if(move[0] == wfp[0]){
+            else if(move[0] == wfp[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wfp[1]) == ((wfp[1] != '2') ? 1 : 2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wfp[1]) == 1)){
                 strcpy(start, wfp);
                 strcpy(wfp, end);
             }
-            else if(move[0] == wgp[0]){
+            else if(move[0] == wgp[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wgp[1]) == ((wgp[1] != '2') ? 1 : 2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wgp[1]) == 1)){
                 strcpy(start, wgp);
                 strcpy(wgp, end);
             }
-            else if(move[0] == whp[0]){
+            else if(move[0] == whp[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - whp[1]) == ((whp[1] != '2') ? 1 : 2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - whp[1]) == 1)){
                 strcpy(start, whp);
                 strcpy(whp, end);
             }
@@ -288,10 +290,12 @@ int main(){
             if(strlen(move) == 5){
                 strcpy(end, "c8");
                 strcpy(blr, "d8");
+                isCas = true;
             }
             else{
                 strcpy(end, "g8");
                 strcpy(brr, "f8");
+                isCas = true;
             }
         }
 
@@ -308,35 +312,35 @@ int main(){
 
         if(move[0] >='a' && move[0] <= 'h'){
             strcpy(piece, "Pawn");
-            if(move[0] == bap[0]){
+            if(move[0] == bap[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bap[1]) == ((bap[1] != '7') ? -1 : -2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bap[1]) == -1)){
                 strcpy(start, bap);
                 strcpy(bap, end);
             }
-            else if(move[0] == bbp[0]){
+            else if(move[0] == bbp[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bbp[1]) == ((bbp[1] != '7') ? -1 : -2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bbp[1]) == -1)){
                 strcpy(start, bbp);
                 strcpy(bbp, end);
             }
-            else if(move[0] == bcp[0]){
+            else if(move[0] == bcp[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bcp[1]) == ((bcp[1] != '7') ? -1 : -2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bcp[1]) == -1)){
                 strcpy(start, bcp);
                 strcpy(bcp, end);
             }
-            else if(move[0] == bdp[0]){
+            else if(move[0] == bdp[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bdp[1]) == ((bdp[1] != '7') ? -1 : -2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bdp[1]) == -1)){
                 strcpy(start, bdp);
                 strcpy(bdp, end);
             }
-            else if(move[0] == bep[0]){
+            else if(move[0] == bep[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bep[1]) == ((bep[1] != '7') ? -1 : -2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bep[1]) == -1)){
                 strcpy(start, bep);
                 strcpy(bep, end);
             }
-            else if(move[0] == bfp[0]){
+            else if(move[0] == bfp[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bfp[1]) == ((bfp[1] != '7') ? -1 : -2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bfp[1]) == -1)){
                 strcpy(start, bfp);
                 strcpy(bfp, end);
             }
-            else if(move[0] == bgp[0]){
+            else if(move[0] == bgp[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bgp[1]) == ((bgp[1] != '7') ? -1 : -2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bgp[1]) == -1)){
                 strcpy(start, bgp);
                 strcpy(bgp, end);
             }
-            else if(move[0] == bhp[0]){
+            else if(move[0] == bhp[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bhp[1]) == ((bhp[1] != '7') ? -1 : -2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bhp[1]) == -1)){
                 strcpy(start, bhp);
                 strcpy(bhp, end);
             }
