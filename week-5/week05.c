@@ -90,35 +90,35 @@ int main(){
 
         if(move[0] >='a' && move[0] <= 'h'){
             strcpy(piece, "Pawn");
-            if(move[0] == wap[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wap[1]) == ((wap[1] != '2') ? 1 : 2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wap[1]) == 1)){
+            if(move[0] == wap[0] && ((int)(end[1] - wap[1]) == ((wap[1] != '2') ? 1 : 2) || (int)(end[1] - wap[1]) == 1)){
                 strcpy(start, wap);
                 strcpy(wap, end);
             }
-            else if(move[0] == wbp[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wbp[1]) == ((wbp[1] != '2') ? 1 : 2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wbp[1]) == 1)){
+            else if(move[0] == wbp[0] && ((int)(end[1] - wbp[1]) == ((wbp[1] != '2') ? 1 : 2) || (int)(end[1] - wbp[1]) == 1)){
                 strcpy(start, wbp);
                 strcpy(wbp, end);
             }
-            else if(move[0] == wcp[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wcp[1]) == ((wcp[1] != '2') ? 1 : 2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wcp[1]) == 1)){
+            else if(move[0] == wcp[0] && ((int)(end[1] - wcp[1]) == ((wcp[1] != '2') ? 1 : 2) || (int)(end[1] - wcp[1]) == 1)){
                 strcpy(start, wcp);
                 strcpy(wcp, end);
             }
-            else if(move[0] == wdp[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wdp[1]) == ((wdp[1] != '2') ? 1 : 2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wdp[1]) == 1)){
+            else if(move[0] == wdp[0] && ((int)(end[1] - wdp[1]) == ((wdp[1] != '2') ? 1 : 2) || (int)(end[1] - wdp[1]) == 1)){
                 strcpy(start, wdp);
                 strcpy(wdp, end);
             }
-            else if(move[0] == wep[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wep[1]) == ((wep[1] != '2') ? 1 : 2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wep[1]) == 1)){
+            else if(move[0] == wep[0] && ((int)(end[1] - wep[1]) == ((wep[1] != '2') ? 1 : 2) || (int)(end[1] - wep[1]) == 1)){
                 strcpy(start, wep);
                 strcpy(wep, end);
             }
-            else if(move[0] == wfp[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wfp[1]) == ((wfp[1] != '2') ? 1 : 2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wfp[1]) == 1)){
+            else if(move[0] == wfp[0] && ((int)(end[1] - wfp[1]) == ((wfp[1] != '2') ? 1 : 2) || (int)(end[1] - wfp[1]) == 1)){
                 strcpy(start, wfp);
                 strcpy(wfp, end);
             }
-            else if(move[0] == wgp[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wgp[1]) == ((wgp[1] != '2') ? 1 : 2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - wgp[1]) == 1)){
+            else if(move[0] == wgp[0] && ((int)(end[1] - wgp[1]) == ((wgp[1] != '2') ? 1 : 2) || (int)(end[1] - wgp[1]) == 1)){
                 strcpy(start, wgp);
                 strcpy(wgp, end);
             }
-            else if(move[0] == whp[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - whp[1]) == ((whp[1] != '2') ? 1 : 2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - whp[1]) == 1)){
+            else if(move[0] == whp[0] && ((int)(end[1] - whp[1]) == ((whp[1] != '2') ? 1 : 2) || (int)(end[1] - whp[1]) == 1)){
                 strcpy(start, whp);
                 strcpy(whp, end);
             }
@@ -155,74 +155,46 @@ int main(){
                     strcpy(wrr, end);
                 }
                 else if(wlr[0] == wrr[0] || wlr[1] == wrr[1]){
-                    if(move[1] == 'x'){
-                        if(move[2] == wlr[0]){
-                            if(abs((int)(move[3] - wlr[1])) < abs((int)(move[3] - wrr[1]))){
-                                strcpy(start, wlr);
-                                strcpy(wlr, end);
-                            }
-                            else{
-                                strcpy(start, wrr);
-                                strcpy(wrr, end);
-                            }
+                    if(end[0] == wlr[0]){
+                        if(abs((int)(end[1] - wlr[1])) < abs((int)(end[1] - wrr[1]))){
+                            strcpy(start, wlr);
+                            strcpy(wlr, end);
                         }
                         else{
-                            if(abs((int)(move[2] - wlr[0])) < abs((int)(move[2] - wrr[0]))){
-                                strcpy(start, wlr);
-                                strcpy(wlr, end);
-                            }
-                            else{
-                                strcpy(start, wrr);
-                                strcpy(wrr, end);
-                            }
+                            strcpy(start, wrr);
+                            strcpy(wrr, end);
                         }
                     }
                     else{
-                        if(move[1] == wlr[0]){
-                            if(abs((int)(move[2] - wlr[1])) < abs((int)(move[2] - wrr[1]))){
-                                strcpy(start, wlr);
-                                strcpy(wlr, end);
-                            }
-                            else{
-                                strcpy(start, wrr);
-                                strcpy(wrr, end);
-                            }
+                        if(abs((int)(end[0] - wlr[0])) < abs((int)(end[0] - wrr[0]))){
+                            strcpy(start, wlr);
+                            strcpy(wlr, end);
                         }
                         else{
-                            if(abs((int)(move[1] - wlr[0])) < abs((int)(move[1] - wrr[0]))){
-                                strcpy(start, wlr);
-                                strcpy(wlr, end);
-                            }
-                            else{
-                                strcpy(start, wrr);
-                                strcpy(wrr, end);
-                            }
+                            strcpy(start, wrr);
+                            strcpy(wrr, end);
                         }
                     }
                 }
-                else if(move[1] == 'x'){
-                    if(move[2] == wlr[0] || move[3] == wlr[1]){
-                    strcpy(start, wlr);
-                    strcpy(wlr, end);
-                    }
-                    else if(move[2] == wrr[0] || move[3] == wrr[1]){
-                        strcpy(start, wrr);
-                        strcpy(wrr, end);
-                    }
+                else if(end[0] == wlr[0] || end[1] == wlr[1]){
+                strcpy(start, wlr);
+                strcpy(wlr, end);
                 }
-                else{
-                    if(move[1] == wlr[0] || move[2] == wlr[1]){
-                        strcpy(start, wlr);
-                        strcpy(wlr, end);
-                    }
-                    else if(move[1] == wrr[0] || move[2] == wrr[1]){
-                        strcpy(start, wrr);
-                        strcpy(wrr, end);
-                    }
+                else if(end[0] == wrr[0] || end[1] == wrr[1]){
+                    strcpy(start, wrr);
+                    strcpy(wrr, end);
                 }
                 break;
             case 'B':
                 strcpy(piece, "Bishop");
+                if(abs((int)(end[0] - wlb[0])) == abs((int)(end[1] - wlb[1]))){
+                    strcpy(start, wlb);
+                    strcpy(wlb, end);
+                }
+                else if(abs((int)(end[0] - wrb[0])) == abs((int)(end[1] - wrb[1]))){
+                    strcpy(start, wrb);
+                    strcpy(wrb, end);
+                }
                 break;
             case 'N':
                 strcpy(piece, "Knight");
@@ -242,25 +214,13 @@ int main(){
                     strcpy(start, wrn);
                     strcpy(wrn, end);
                 }
-                else if(move[1] == 'x'){
-                    if((abs((int)(move[2] - wln[0])) == 2 && abs((int)(move[3] - wln[1])) == 1) || (abs((int)(move[2] - wln[0])) == 1 && abs((int)(move[3] - wln[1])) == 2)){
-                        strcpy(start, wln);
-                        strcpy(wln, end);
-                    }
-                    else{
-                        strcpy(start, wrn);
-                        strcpy(wrn, end);
-                    }
+                else if((abs((int)(end[0] - wln[0])) == 2 && abs((int)(end[1] - wln[1])) == 1) || (abs((int)(end[0] - wln[0])) == 1 && abs((int)(end[1] - wln[1])) == 2)){
+                    strcpy(start, wln);
+                    strcpy(wln, end);
                 }
-                else{
-                    if((abs((int)(move[1] - wln[0])) == 2 && abs((int)(move[2] - wln[1])) == 1) || (abs((int)(move[1] - wln[0])) == 1 && abs((int)(move[2] - wln[1])) == 2)){
-                        strcpy(start, wln);
-                        strcpy(wln, end);
-                    }
-                    else{
-                        strcpy(start, wrn);
-                        strcpy(wrn, end);
-                    }
+                else if((abs((int)(end[0] - wrn[0])) == 2 && abs((int)(end[1] - wrn[1])) == 1) || (abs((int)(end[0] - wrn[0])) == 1 && abs((int)(end[1] - wrn[1])) == 2)){
+                    strcpy(start, wrn);
+                    strcpy(wrn, end);
                 }
                 break;
             default:
@@ -312,35 +272,35 @@ int main(){
 
         if(move[0] >='a' && move[0] <= 'h'){
             strcpy(piece, "Pawn");
-            if(move[0] == bap[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bap[1]) == ((bap[1] != '7') ? -1 : -2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bap[1]) == -1)){
+            if(move[0] == bap[0] && ((int)(end[1] - bap[1]) == ((bap[1] != '7') ? -1 : -2) || (int)(end[1] - bap[1]) == -1)){
                 strcpy(start, bap);
                 strcpy(bap, end);
             }
-            else if(move[0] == bbp[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bbp[1]) == ((bbp[1] != '7') ? -1 : -2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bbp[1]) == -1)){
+            else if(move[0] == bbp[0] && ((int)(end[1] - bbp[1]) == ((bbp[1] != '7') ? -1 : -2) || (int)(end[1] - bbp[1]) == -1)){
                 strcpy(start, bbp);
                 strcpy(bbp, end);
             }
-            else if(move[0] == bcp[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bcp[1]) == ((bcp[1] != '7') ? -1 : -2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bcp[1]) == -1)){
+            else if(move[0] == bcp[0] && ((int)(end[1] - bcp[1]) == ((bcp[1] != '7') ? -1 : -2) || (int)(end[1] - bcp[1]) == -1)){
                 strcpy(start, bcp);
                 strcpy(bcp, end);
             }
-            else if(move[0] == bdp[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bdp[1]) == ((bdp[1] != '7') ? -1 : -2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bdp[1]) == -1)){
+            else if(move[0] == bdp[0] && ((int)(end[1] - bdp[1]) == ((bdp[1] != '7') ? -1 : -2) || (int)(end[1] - bdp[1]) == -1)){
                 strcpy(start, bdp);
                 strcpy(bdp, end);
             }
-            else if(move[0] == bep[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bep[1]) == ((bep[1] != '7') ? -1 : -2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bep[1]) == -1)){
+            else if(move[0] == bep[0] && ((int)(end[1] - bep[1]) == ((bep[1] != '7') ? -1 : -2) || (int)(end[1] - bep[1]) == -1)){
                 strcpy(start, bep);
                 strcpy(bep, end);
             }
-            else if(move[0] == bfp[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bfp[1]) == ((bfp[1] != '7') ? -1 : -2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bfp[1]) == -1)){
+            else if(move[0] == bfp[0] && ((int)(end[1] - bfp[1]) == ((bfp[1] != '7') ? -1 : -2) || (int)(end[1] - bfp[1]) == -1)){
                 strcpy(start, bfp);
                 strcpy(bfp, end);
             }
-            else if(move[0] == bgp[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bgp[1]) == ((bgp[1] != '7') ? -1 : -2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bgp[1]) == -1)){
+            else if(move[0] == bgp[0] && ((int)(end[1] - bgp[1]) == ((bgp[1] != '7') ? -1 : -2) || (int)(end[1] - bgp[1]) == -1)){
                 strcpy(start, bgp);
                 strcpy(bgp, end);
             }
-            else if(move[0] == bhp[0] && ((int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bhp[1]) == ((bhp[1] != '7') ? -1 : -2) || (int)(((move[strlen(move)-1] > '0' && move[strlen(move)-1] < '9') ? move[strlen(move)-1] : move[strlen(move)-2]) - bhp[1]) == -1)){
+            else if(move[0] == bhp[0] && ((int)(end[1] - bhp[1]) == ((bhp[1] != '7') ? -1 : -2) || (int)(end[1] - bhp[1]) == -1)){
                 strcpy(start, bhp);
                 strcpy(bhp, end);
             }
@@ -377,74 +337,46 @@ int main(){
                     strcpy(brr, end);
                 }
                 else if(blr[0] == brr[0] || blr[1] == brr[1]){
-                    if(move[1] == 'x'){
-                        if(move[2] == blr[0]){
-                            if(abs((int)(move[3] - blr[1])) < abs((int)(move[3] - brr[1]))){
-                                strcpy(start, blr);
-                                strcpy(blr, end);
-                            }
-                            else{
-                                strcpy(start, brr);
-                                strcpy(brr, end);
-                            }
+                    if(end[0] == blr[0]){
+                        if(abs((int)(end[1] - blr[1])) < abs((int)(end[1] - brr[1]))){
+                            strcpy(start, blr);
+                            strcpy(blr, end);
                         }
                         else{
-                            if(abs((int)(move[2] - blr[0])) < abs((int)(move[2] - brr[0]))){
-                                strcpy(start, blr);
-                                strcpy(blr, end);
-                            }
-                            else{
-                                strcpy(start, brr);
-                                strcpy(brr, end);
-                            }
+                            strcpy(start, brr);
+                            strcpy(brr, end);
                         }
                     }
                     else{
-                        if(move[1] == blr[0]){
-                            if(abs((int)(move[2] - blr[1])) < abs((int)(move[2] - brr[1]))){
-                                strcpy(start, blr);
-                                strcpy(blr, end);
-                            }
-                            else{
-                                strcpy(start, brr);
-                                strcpy(brr, end);
-                            }
+                        if(abs((int)(end[0] - blr[0])) < abs((int)(end[0] - brr[0]))){
+                            strcpy(start, blr);
+                            strcpy(blr, end);
                         }
                         else{
-                            if(abs((int)(move[1] - blr[0])) < abs((int)(move[1] - brr[0]))){
-                                strcpy(start, blr);
-                                strcpy(blr, end);
-                            }
-                            else{
-                                strcpy(start, brr);
-                                strcpy(brr, end);
-                            }
+                            strcpy(start, brr);
+                            strcpy(brr, end);
                         }
                     }
                 }
-                else if(move[1] == 'x'){
-                    if(move[2] == blr[0] || move[3] == blr[1]){
-                    strcpy(start, blr);
-                    strcpy(blr, end);
-                    }
-                    else if(move[2] == brr[0] || move[3] == brr[1]){
-                        strcpy(start, brr);
-                        strcpy(brr, end);
-                    }
+                else if(end[0] == blr[0] || end[1] == blr[1]){
+                strcpy(start, blr);
+                strcpy(blr, end);
                 }
-                else{
-                    if(move[1] == blr[0] || move[2] == blr[1]){
-                        strcpy(start, blr);
-                        strcpy(blr, end);
-                    }
-                    else if(move[1] == brr[0] || move[2] == brr[1]){
-                        strcpy(start, brr);
-                        strcpy(brr, end);
-                    }
+                else if(end[0] == brr[0] || end[1] == brr[1]){
+                    strcpy(start, brr);
+                    strcpy(brr, end);
                 }
                 break;
             case 'B':
                 strcpy(piece, "Bishop");
+                if(abs((int)(end[0] - blb[0])) == abs((int)(end[1] - blb[1]))){
+                    strcpy(start, blb);
+                    strcpy(blb, end);
+                }
+                else if(abs((int)(end[0] - brb[0])) == abs((int)(end[1] - brb[1]))){
+                    strcpy(start, brb);
+                    strcpy(brb, end);
+                }
                 break;
             case 'N':
                 strcpy(piece, "Knight");
@@ -464,25 +396,13 @@ int main(){
                     strcpy(start, brn);
                     strcpy(brn, end);
                 }
-                else if(move[1] == 'x'){
-                    if((abs((int)(move[2] - bln[0])) == 2 && abs((int)(move[3] - bln[1])) == 1) || (abs((int)(move[2] - bln[0])) == 1 && abs((int)(move[3] - bln[1])) == 2)){
-                        strcpy(start, bln);
-                        strcpy(bln, end);
-                    }
-                    else{
-                        strcpy(start, brn);
-                        strcpy(brn, end);
-                    }
+                else if((abs((int)(end[0] - bln[0])) == 2 && abs((int)(end[1] - bln[1])) == 1) || (abs((int)(end[0] - bln[0])) == 1 && abs((int)(end[1] - bln[1])) == 2)){
+                    strcpy(start, bln);
+                    strcpy(bln, end);
                 }
-                else{
-                    if((abs((int)(move[1] - bln[0])) == 2 && abs((int)(move[2] - bln[1])) == 1) || (abs((int)(move[1] - bln[0])) == 1 && abs((int)(move[2] - bln[1])) == 2)){
-                        strcpy(start, bln);
-                        strcpy(bln, end);
-                    }
-                    else{
-                        strcpy(start, brn);
-                        strcpy(brn, end);
-                    }
+                else if((abs((int)(end[0] - brn[0])) == 2 && abs((int)(end[1] - brn[1])) == 1) || (abs((int)(end[0] - brn[0])) == 1 && abs((int)(end[1] - brn[1])) == 2)){
+                    strcpy(start, brn);
+                    strcpy(brn, end);
                 }
                 break;
             default:
