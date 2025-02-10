@@ -175,7 +175,7 @@ int main(){
                         }
                     }
                     else{
-                        if(abs((int)(end[0] - wlr[0])) < abs((int)(end[0] - wrr[0]))){
+                        if((abs((int)(end[0] - wlr[0])) < abs((int)(end[0] - wrr[0]))) && test){
                             strcpy(start, wlr);
                             strcpy(wlr, end);
                         }
@@ -367,7 +367,7 @@ int main(){
                         }
                     }
                     else{
-                        if(abs((int)(end[0] - blr[0])) < abs((int)(end[0] - brr[0]))){
+                        if((abs((int)(end[0] - blr[0])) < abs((int)(end[0] - brr[0]))) && test){
                             strcpy(start, blr);
                             strcpy(blr, end);
                         }
