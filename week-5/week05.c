@@ -45,6 +45,8 @@ int main(){
     char wlb[3] = "c1";
     char brb[3] = "f8";
     char wrb[3] = "f1";
+    char cap[100][3];
+    int i = 0;
     while(c--){
         char s[1000];
         char move[10];
@@ -155,8 +157,15 @@ int main(){
                     strcpy(wrr, end);
                 }
                 else if(wlr[0] == wrr[0] || wlr[1] == wrr[1]){
+                    bool test = 1;
+                    for(int j = 0; j < i; j++){
+                        if(!strcmp(wlr, cap[j])){
+                            test = 0;
+                            break;
+                        }
+                    }
                     if(end[0] == wlr[0]){
-                        if(abs((int)(end[1] - wlr[1])) < abs((int)(end[1] - wrr[1]))){
+                        if((abs((int)(end[1] - wlr[1])) < abs((int)(end[1] - wrr[1]))) && test){
                             strcpy(start, wlr);
                             strcpy(wlr, end);
                         }
@@ -229,6 +238,9 @@ int main(){
                 strcpy(wk, end);
                 break;
             }
+        }
+        if(isCap){
+            strcpy(cap[i++], end);
         }
 
         fprintf(outfile,"INSERT INTO T1 VALUES (%d, \"%s\", \"%s\", \"%s\", \"%s\", %d, %d ,%d, %d);\n", mv, "White", piece, start, end, isCap, isCas, isCheck, isCMate);
@@ -337,8 +349,15 @@ int main(){
                     strcpy(brr, end);
                 }
                 else if(blr[0] == brr[0] || blr[1] == brr[1]){
+                    bool test = 1;
+                    for(int j = 0; j < i; j++){
+                        if(!strcmp(blr, cap[j])){
+                            test = 0;
+                            break;
+                        }
+                    }
                     if(end[0] == blr[0]){
-                        if(abs((int)(end[1] - blr[1])) < abs((int)(end[1] - brr[1]))){
+                        if((abs((int)(end[1] - blr[1])) < abs((int)(end[1] - brr[1]))) && test){
                             strcpy(start, blr);
                             strcpy(blr, end);
                         }
@@ -411,6 +430,10 @@ int main(){
                 strcpy(bk, end);
                 break;
             }
+        }
+
+        if(isCap){
+            strcpy(cap[i++], end);
         }
 
         if(mv != 45){
